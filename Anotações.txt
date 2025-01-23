@@ -1,0 +1,72 @@
+<script>
+	
+	Meu código
+
+</script>
+
+#Alerta
+window.alert('Isto é um aviso')
+
+#Confirmação
+window.confirm('Confirma esta ação?')
+
+#Entrada de dados
+window.prompt('Qual o seu nome?')
+
+# Variáveis
+definindo com exemplo:
+var nome = (window.prompt('Qual o seu nome?')
+var idade = Number(window.prompt('Qual sua idade?')
+
+#Retornando valores
+window.alert('Seja bem vindo '+ nome +' você tem '+ idade +' anos de idade')
+
+#Convertendo valores String para Números
+var idade = window.prompt('Qual sua idade?')
+Number(idade)
+
+#Conversões forçadas
+Number.parseInt(n) // Força valor inteiro
+Number.parseFloat(n) // Força valor real
+Number(n) // O compilador define qual tipo de número
+
+#Convertendo Número para String
+String(n)
+n.toString()
+
+#Concatenação
+s = 'JavaScript'
+nome = 'Diego'
+idade = 32
+nota = 5.5
+'O aluno '+ nome +' com '+ idade +' anos, tirou nota '+ nota
+'O aluno Diego com 32 anos, tirou nota 5.5'
+
+#Template String
+Nesse caso usa-se crase
+`Eu estou aprnedendo ${s}`
+
+#Verificando tamanho da String s
+s.length
+
+#Formatando Strings
+s.toUpperCase()
+s.toLowerCase()
+
+#Escrevendo na tela
+    <script>
+        var nome = window.prompt('Qual é o seu nome?')
+        document.writeln(`<h2>Seu nome tem ${nome.length} letras</h2>`)
+    </script>
+
+#Formatando números
+var n1 = 2.5
+n1.toFixed(2)
+
+//Saída
+> 2.50
+
+//Alterando para , em vez de ponto
+n1.toFixed(2).replace('.', ',')
+
+n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
