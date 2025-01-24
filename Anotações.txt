@@ -1,3 +1,4 @@
+#==#@ Início @#==#
 <script>
 	
 	Meu código
@@ -92,3 +93,39 @@ pote **
 var n = 4
 n += 1 é o mesmo que n++
 n -= 1 é o mesmo que n--
+
+#Operadores relacionais
+>
+<
+>=
+<=
+==
+!=
+
+Em JS:
+5 == '5' resulta true
+
+Uma maneira de testar é:
+5 === '5' aí resulta false
+5 === 5 resulta true
+
+#Operadores lógicos
+negação (NOT lógico) !
+conjunção (E lógico) &&
+disjunção (OU lógico) ||
+
+#Precedência
+Operadores aritméticos
+Operadores lógicos
+!
+&&
+||
+
+#Operador tenário
+teste ? true : false
+
+exemplo
+média >= 7.0? 'Aprovado' : 'reprovado'
+
+
+#==#@ DOM - Document Object Model @#==#
