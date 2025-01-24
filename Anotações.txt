@@ -69,4 +69,26 @@ n1.toFixed(2)
 //Alterando para , em vez de ponto
 n1.toFixed(2).replace('.', ',')
 
-n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+#Formatando para monetário
+var salario = 4100
+
+var salario = salario.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+#==#@ Operadores @#==#
+soma +
+subt -
+mult *
+divi /
+rest %
+pote **
+
+#Ordem de precedência
+( )
+**
+* / %
++ -
+
+#Operadores simplificados
+var n = 4
+n += 1 é o mesmo que n++
+n -= 1 é o mesmo que n--
