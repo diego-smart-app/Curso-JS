@@ -129,3 +129,56 @@ média >= 7.0? 'Aprovado' : 'reprovado'
 
 
 #==#@ DOM - Document Object Model @#==#
+
+Usar microservidor para pagina atualizar sozinha, instalar live server e extensão no google
+
+Árvore DOM:
+window
+	location
+	document
+		html
+			head
+				meta
+				title
+			body
+				h1
+				p
+				p
+					strong
+				div
+	history
+
+<script>
+        window.document.write(window.navigator.appName)
+</script>
+
+
+
+#==#@ Selecionando @#==#
+
+Por:
+Marca - getElementsByTagName()
+Ex:
+	var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write('Está escrito assim: '+ p1.innerText)
+        corpo.style.background = 'black'
+        p1.style.color = 'blue'
+
+ID - getElementByid()
+Ex:
+	var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1]
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        // d.innerText = 'Estou aguardando...'
+        window.do.getElementById('msg').innertext = 'Olá'
+
+Nome - getElementsByName()
+Classe - getElementsByClassName()
+
+Seletor - querySelector() ou qyerySelectorAll()
+Ex:
+	var d = window.document.querySelector('div#msg') // Ou 'div.msg' se for classe
+
+
