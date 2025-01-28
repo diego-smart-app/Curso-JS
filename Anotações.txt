@@ -182,3 +182,52 @@ Ex:
 	var d = window.document.querySelector('div#msg') // Ou 'div.msg' se for classe
 
 
+#==#@ Eventos DOM @#==#
+
+Crie uma div, ela pode ter 6 eventos relacionado com o mouse:
+mouseenter
+mousemove
+mousedown
+mouseup
+click
+mouseout
+
+## Site para pesquisar eventos
+javascript dom events list - event reference
+
+#==#@ Funções @#==#
+
+function nome(parametros...)
+	{
+
+	}
+
+<script>
+        var area = window.document.getElementById('area')
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+
+        function clicar()
+        {
+            area.innerText = 'Clicou !'
+            area.style.background = 'red'
+        }
+
+        function entrar()
+        {
+            area.innerText = 'Entrou !'
+        }
+
+        function sair()
+        {
+            area.innerText = 'Saiu !'
+            area.style.background = 'rgb(42, 139, 42)'
+        }
+    </script>
+
+
+Inspecionar erros do JS
+Na página clica botão direito e clica em inspect
+Nessa janela aparecerá o erro
+
