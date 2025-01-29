@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body
+        {
+            background-color: rgb(117, 114, 114);
+            color: white;
+        }
+        
+        img
+        {
+            border-radius: 50%;
+            padding: 30px;
+            width: 80px;
+        }
+
+        input
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha qual cálculo fazer</h1>
+    <img id="soma" src="imagens/soma.png" alt="" onclick="soma_c()">
+    <img id="subtracao" src="imagens/subtracao.png" alt="">
+    <img id="multiplicacao" src="imagens/multiplicacao.png" alt="">
+    <img id="divisao" src="imagens/divisao.png" alt="">
+    <img id="radiciacao" src="imagens/radiciacao.png" alt="">
+
+    <input type="number" id="n1">
+    <input type="number" id="n2">
+
+    <script>
+        function soma_c()
+        {
+            window.alert('Clicou em soma')
+        }
+    </script>
+    </body>
+</html>
