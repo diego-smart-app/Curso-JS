@@ -7,41 +7,129 @@
     <style>
         body
         {
-            background-color: rgb(117, 114, 114);
+            background-color: black;
             color: white;
         }
-        
-        img
+
+        div#n1
         {
-            border-radius: 50%;
-            padding: 30px;
-            width: 80px;
+            background-color: yellow;
+            width: 250px;
+            height: 50px;
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            border-radius: 10px;
+        }
+
+        div#n2
+        {
+            background-color: yellow;
+            width: 250px;
+            height: 50px;
+            position: absolute;
+            top: 30%;
+            left: 5%;
+            border-radius: 10px;
+        }
+
+        div#n3
+        {
+            background-color: yellow;
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            top: 40%;
+            left: 5%;
+            border-radius: 10px;
+            background-color: rgb(184, 164, 164);
+        }
+
+        div#n4
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            color: black;
+            padding: 20x;
+            background-color: yellow;
+            width: 400px;
+            height: 50px;
+            position: absolute;
+            top: 60%;
+            left: 5%;
+            border-radius: 10px;
+            background-color: aquamarine;
         }
 
         input
         {
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: left;
-            padding: 10px;
+            width: 200px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: aquamarine;
         }
+
+        img
+        {
+            width: 60px;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        
     </style>
 </head>
-<body>
-    <h1>Escolha qual cálculo fazer</h1>
-    <img id="soma" src="imagens/soma.png" alt="" onclick="soma_c()">
-    <img id="subtracao" src="imagens/subtracao.png" alt="">
-    <img id="multiplicacao" src="imagens/multiplicacao.png" alt="">
-    <img id="divisao" src="imagens/divisao.png" alt="">
-    <img id="radiciacao" src="imagens/radiciacao.png" alt="">
+    <body>
+        <h1>Insira os números que deseja calcular, em seguida qual operação realizar</h1>
+        <div id="n1">
+            <input type="number" name="" id="numero_1">
+        </div>
+        <div id="n2">
+            <input type="number" name="" id="numero_2">
+        </div>
+        <div id="n3">
+            <img onclick="soma()" src="imagens/soma.png" alt="">
+            <img onclick="subtracao()" src="imagens/subtracao.png" alt="">
+            <img onclick="multip()" src="imagens/multiplicacao.png" alt="">
+            <img onclick="divis()" src="imagens/divisao.png" alt="">
+            <img onclick="raiz()" src="imagens/radiciacao.png" alt="">
+        </div>
+        <div id="n4"></div>
 
-    <input type="number" id="n1">
-    <input type="number" id="n2">
+        <script>
 
-    <script>
-        function soma_c()
-        {
-            window.alert('Clicou em soma')
-        }
-    </script>
+            var primeiro_n = window.document.getElementById('numero_1')
+            var segundo_n = window.document.getElementById('numero_2')
+            var n_prim = Number(primeiro_n.value)
+            var n_segun = Number(segundo_n.value)
+            var res = window.document.getElementById('n4')
+
+            function soma()
+            {
+                var calculo = n_prim + n_segun
+                res.innerHTML = `Resultado da soma é <strong>${calculo}</strong>`
+            }
+
+            function subtracao()
+            {
+                window.alert('SUBTRAÇÃO')
+            }
+
+            function multip()
+            {
+                window.alert('MULTIPLICAÇÃO')
+            }
+
+            function divis()
+            {
+                window.alert('DIVISÃO')
+            }
+
+            function raiz()
+            {
+                window.alert('RAIZ')
+            }
+        </script>
+
     </body>
 </html>
