@@ -92,22 +92,22 @@
     <body>
         <h1>Insira os números que deseja calcular, em seguida qual operação realizar</h1>
         <div id="n1">
-            <input type="number" name="" id="numero_1">
+            <input tabindex="1" type="number" id="numero_1">
         </div>
         <div id="n2">
-            <input type="number" name="" id="numero_2">
+            <input tabindex="2" type="number" id="numero_2">
         </div>
         <div id="n3">
-            <img onclick="soma()" src="imagens/soma.png" alt="">
-            <img onclick="subtracao()" src="imagens/subtracao.png" alt="">
-            <img onclick="multip()" src="imagens/multiplicacao.png" alt="">
-            <img onclick="divis()" src="imagens/divisao.png" alt="">
-            <img onclick="raiz()" src="imagens/radiciacao.png" alt="">
+            <img tabindex="3" onclick="soma()" src="imagens/soma.png" alt="">
+            <img tabindex="4" onclick="subtracao()" src="imagens/subtracao.png" alt="">
+            <img tabindex="5" onclick="multip()" src="imagens/multiplicacao.png" alt="">
+            <img tabindex="6" onclick="divis()" src="imagens/divisao.png" alt="">
+            <img tabindex="7" onclick="raiz()" src="imagens/radiciacao.png" alt="">
         </div>
         <div id="n4"></div>
 
         <script>
-
+            
             function soma()
             {
                 var primeiro_n = window.document.getElementById('numero_1')
