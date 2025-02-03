@@ -231,3 +231,42 @@ Inspecionar erros do JS
 Na página clica botão direito e clica em inspect
 Nessa janela aparecerá o erro
 
+
+#==#@ Data atual em JS @#==#
+
+var agora = new Date()
+var hora = agora.getHours()
+var minuto = agora.getMinutes()
+console.log(`Agora são exatamente ${hora}:${minuto}.`)
+if (hora < 12)
+    {
+        console.log('Bom dia!')
+    } else if (hora <= 18)
+        {
+            console.log('Boa tarde!')
+        } else
+            {
+                console.log('Boa noite!')
+            }
+
+
+#==#@ Switch @#==#
+
+switch (expressão)
+	{
+		case valor1:
+		bloco a executar
+		break
+
+		case valor2:
+		bloco a executar
+		break
+
+		case valor3:
+		bloco a executar
+		break
+
+		default:
+		bloco a executar
+		break
+	}
