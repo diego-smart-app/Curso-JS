@@ -26,9 +26,11 @@
         div#creditos
         {
             text-align: center;
+            display: block;
             position: absolute;
             top: 89%;
-            left: 40%;            
+            left: 50%;
+            transform: translate(-50%, -30%);   
         }
 
         div#imagem_tempo
@@ -43,12 +45,24 @@
             background-color: white;
             border-radius: 10px;
         }
+
+        img#imagem_parte_do_dia
+        {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 325px;
+            height: 325px;
+            border-radius: 50%;
+        }
     </style>
 </head>
-<body>
+<body id="cor_fundo">
     <h1>Hora do dia</h1>
     <div id="imagem_tempo">
         <h2 id="frase_hora">Hora aparece aqui</h2>
+        <img id="imagem_parte_do_dia" src="" alt="">
     </div>
 
     <div id="creditos">
@@ -58,11 +72,46 @@
     </div>
 
     <script>
+        // Obtém dados atuais
         var agora = new Date()
         var hora = agora.getHours()
         var min = agora.getMinutes()
+
+        // Atualiza hora atual
         var frase = window.document.getElementById('frase_hora')
         frase.innerHTML = `Agora são ${hora}:${min}`
+
+        // Chama função para atualizar imagem e cor de fundo
+        imagem()
+
+        // Muda cor de funo de acordo com a hora
+        function imagem()
+        {
+            var imagem_exibida = ''
+            if (hora >= 0 && hora < 6)
+            {
+                var imagem_exibida = "imagens/madrugada_boa.jpg"
+                window.document.getElementById('cor_fundo').style.backgroundColor = 'rgb(56, 60, 117)';
+            } else if (hora >= 6 && hora < 7)
+            {
+                var imagem_exibida = "imagens/cedo_boa.jpg"
+                window.document.getElementById('cor_fundo').style.backgroundColor = 'rgb(79, 132, 201)';
+            } else if (hora >= 7 && hora < 12)
+            {
+                var imagem_exibida = "imagens/dia_boa.jpg"
+                window.document.getElementById('cor_fundo').style.backgroundColor = 'rgb(130, 133, 175)';
+            } else if (hora >= 12 && hora < 18)
+            {
+                var imagem_exibida = "imagens/tarde_boa.jpg"
+                window.document.getElementById('cor_fundo').style.backgroundColor = 'rgb(240, 153, 40)';
+            } else if (hora >= 18 && hora <=23 )
+            {
+                var imagem_exibida = "imagens/noite_boa.jpg"
+                window.document.getElementById('cor_fundo').style.backgroundColor = 'rgb(14, 19, 83)';
+            }
+
+            window.document.getElementById('imagem_parte_do_dia').src = imagem_exibida
+        }
     </script>
 </body>
 </html>
