@@ -270,3 +270,5 @@ switch (expressão)
 		bloco a executar
 		break
 	}
+
+REPETIÇÕES AULA 13
