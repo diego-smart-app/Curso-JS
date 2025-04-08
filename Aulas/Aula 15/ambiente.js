@@ -12,3 +12,20 @@ for (var c = 0; c < num.length; c++)
     {
         console.log(`Item ${c}: ${num[c]}`)
     }
+
+//OOOOOuuuuu.....
+
+for (let pos in num)
+    {
+        console.log(num[pos])
+    }
+    
+let busca_valor = num.indexOf(20)
+
+if (busca_valor == -1)
+{
+    console.log('O valor procurado não existe')
+} else
+{
+    console.log(busca_valor)
+}
