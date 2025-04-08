@@ -8,9 +8,7 @@ num.sort()
 
 console.log(num[2])
 
-var n = 0
-
-for (1; 10; n++)
+for (var c = 0; c < num.length; c++)
     {
-        console.log(num[n])
+        console.log(`Item ${c}: ${num[c]}`)
     }
