@@ -8,7 +8,7 @@
             body
             {
                 font-family: Arial, Helvetica, sans-serif;
-                max-width: 500px;
+                max-width: 300px;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #1A2A3A;
@@ -25,7 +25,7 @@
             header
             {
                 color: white;
-                margin-top: 2%;
+                margin-top: 5%;
                 text-align: center;
             }
 
@@ -39,7 +39,7 @@
 
             input
             {
-                width: 100%;
+                width: 60%;
                 padding: 8px;
                 box-sizing: border-box;
                 border: 1px solid #CCC;
@@ -86,16 +86,13 @@
     </header>
     <section>
         <div id="entrada">
-            <label for="i_inicio">Início:</label>
-            <input type="number" id="i_inicio">
-            <label for="i_fim">Fim:</label>
-            <input type="number" id="i_fim">
-            <label for="i_passo">Passo:</label>
-            <input type="number" id="i_passo">
+            <label for="i_num_tabuada">Qual número dejeja gerar a tabuada?</label>
+            <input type="number" id="i_num_tabuada">
         </div>
-        <button type="submit" onclick="contar()">Contar</button>
+        <button onclick="geraTabuada()">Gerar tabuada</button>
         <div id="saida">
-            <p>Procurando contagem...</p>
+            <select name="tabuada" id="seltab" size="10"  style="display: none"></select>
+            <p id="frase_exibida""></p>
         </div>
     </section>
     <footer>
@@ -104,44 +101,35 @@
         </p>
     </footer>
     <script>
-        function contar()
+        function geraTabuada()
         {
-            var inicio = Number(document.getElementById('i_inicio').value);
-            var fim = Number(document.getElementById('i_fim').value);
-            var passo = Number(document.getElementById('i_passo').value);
+            var num = Number(document.getElementById('i_num_tabuada').value);
 
-            var frase = '';
+            var tab = window.document.getElementById('seltab');
+            tab.style.display = 'none';
 
-            if (inicio == 0 || fim == inicio || passo <= 0)
+            tab.innerHTML = ''
+
+            var frase_mostrada = window.document.getElementById('frase_exibida');
+
+            frase_mostrada.innerHTML = ''
+
+            if (num != 0)
             {
-                window.alert('Os dados não foram sufucientes para fazer a contagem !!!\nConfira os valores e tente novamente.')
-                return
-            }
 
-            if (fim > inicio)
-            {
-                for (var c = inicio; c <= fim; c += passo)
+                for (var c = 1; c <= 10; c++)
                 {
-                    if (c <= fim)
-                    {
-                        frase += `👉${c}, `;
-                    }
+                    var item = window.document.createElement('option');
+                    var frase = `${num} x ${c} = ${num*c}`;
+                    item.text = `${frase}`;
+                    tab.appendChild(item);
                 }
-            } else if (fim < inicio)
+                tab.style.display = 'block'
+
+            } else
             {
-                for (var c = inicio; c >= fim; c -= passo)
-                {
-                    if (c >= fim)
-                    {
-                        frase += `👉${c}, `;
-                    }
-                }   
+                frase_mostrada.innerHTML = 'Por favor, digite um número válido !';
             }
-
-            frase += `👉  Acabou`;
-
-            var frase_mostrada = window.document.getElementById('saida');
-            frase_mostrada.innerHTML = frase;
         }
     </script>
 </body>
