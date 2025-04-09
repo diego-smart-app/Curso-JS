@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Num Analisator</title>
+    <style>
+            body
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                max-width: 550px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #1A2A3A;
+                color: #FFFFFF;
+            }
+
+            section
+            {
+                border: 2px solid #CCC;
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            header
+            {
+                color: white;
+                margin-top: 5%;
+                text-align: center;
+            }
+
+            label
+            {
+                margin-bottom: 5px;
+                margin-top: 20px;
+                font-weight: bold;
+            }
+
+            input
+            {
+                width: 35%;
+                padding: 8px;
+                margin-right: 20px;
+                margin-left: 20px;
+                margin-bottom: 20px;
+                box-sizing: border-box;
+                border: 1px solid #CCC;
+                border-radius: 4px;
+                background-color: #2D3B4A;
+                color: #FFFFFF;
+            }
+
+            div#saida
+            {
+                margin-top: 15px;
+                border-radius: 10px;
+            }
+
+            select
+            {
+                width: 150px;
+                height: 150px;
+            }
+
+            option
+            {
+                margin: 0px;
+                padding: 0px;
+                display: block;
+            }
+
+            button
+            {
+                background-color: #4CAF50;
+                color: white;
+                padding: 8px 15px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            button:hover
+            {
+                background-color: #45A049;
+            }
+
+            footer
+            {
+                color: white;
+                font-size: 1.2em;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Analisador de Números</h1>
+    </header>
+    <section>
+        <div id="entrada">
+            <label for="i_numero_input">Número (entre 1 e 100):</label>
+            <input type="number" id="i_numero_input">
+            <button onclick="adiciona()">Adicionar</button>
+
+            <select name="adicionados" id="num_adicionados" size="8"></select>
+        </div>
+        <div id="saida">
+            <button onclick="finaliza()">Finalizar</button>
+            <p id="frase_exibida"></p>
+        </div>
+    </section>
+    <footer>
+        <p>
+            @DiegoRibeiro
+        </p>
+    </footer>
+    <script>
+        let lista_numeros = []
+
+        var frase_mostrada = window.document.getElementById('frase_exibida');
+
+        let tabela = window.document.getElementById('num_adicionados');
+
+        function adiciona()
+        {
+            if (lista_numeros.length == 0)
+            {
+                tabela.options.length = 0;
+            }
+
+            frase_mostrada.innerHTML = ''
+
+            let num = document.getElementById('i_numero_input').value;
+
+            if (num < 1 || num > 100)
+            {
+                window.alert(`O número está fora do intervalo entre 1 e 100`)
+            } else
+            {
+                let busca_valor = lista_numeros.indexOf(num)
+                
+                if (busca_valor == -1)
+                {
+                    let item = window.document.createElement('option');
+                    item.text = `Valor ${num} foi adicionado`;
+                    tabela.appendChild(item);
+                    lista_numeros.push(num);
+                } else
+                {
+                    window.alert(`O número ${num} já foi adicionado anteriormente`);
+                }
+            }
+            document.getElementById('i_numero_input').value = '';
+            document.getElementById('i_numero_input').focus();
+        }
+
+    function finaliza()
+    {
+
+        if (lista_numeros.length == 0)
+            {
+                tabela.options.length = 0;
+                frase_mostrada.innerHTML = ''
+                return
+            }
+
+        lista_numeros.sort()
+        let qtd = lista_numeros.length;
+        let maior = lista_numeros.pop();
+        let menor = lista_numeros[0];
+        let soma = 0;
+
+        for (let pos in lista_numeros)
+        {
+            soma += Number(lista_numeros[pos]);
+        }
+
+        let media = soma / qtd;
+
+        if (qtd > 0)
+        {
+            frase_mostrada.innerHTML = `Aqui está o relatório<br>Quantidade de números adicionados ${qtd}<br>O maior número adicionado foi ${maior}<br>O menor número adicionado foi ${menor}<br>A soma de todos é de ${soma}`;
+        } else
+        {
+            frase_mostrada.innerHTML = 'Ainda não foram adicionados nenhum número';
+        }   
+            lista_numeros = [];
+    }
+    </script>
+</body>
+</html>
